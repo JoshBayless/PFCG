@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\luis-hp\source\repos\estadio\estadio\include\gl</FILEPATH>
+      <FILENAME>glut.h</FILENAME>
+      <LINE>146</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Anotación incoherente para 'exit': esta instancia tiene sin anotaciones. Vea c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdlib.h(52). </DESCRIPTION>
+    <FUNCTION>exit</FUNCTION>
+    <DECORATED>exit</DECORATED>
+    <FUNCLINE>146</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>
