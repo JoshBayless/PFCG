@@ -66,7 +66,7 @@ typedef struct _frame
 
 FRAME KeyFrame[MAX_FRAMES];
 int FrameIndex=0;			//introducir datos
-bool play=false;
+bool play=true;
 int playIndex=0;
 
 
@@ -150,11 +150,16 @@ void saveFrame(void)
 {
 	printf("frameindex %d\n", FrameIndex);
 
-	
+
 	//monito1 COMPLETO
 	KeyFrame[FrameIndex].posX = posX;
 	KeyFrame[FrameIndex].posY = posY;
 	KeyFrame[FrameIndex].posZ = posZ;
+
+	printf("\n Indice de Frame posicion: %d\n", FrameIndex);
+	printf("\n\t Posicion x: %g", KeyFrame[FrameIndex].posX);
+	printf("\n\t Posicion y: %g", KeyFrame[FrameIndex].posY);
+	printf("\n\t Posicion z: %g", KeyFrame[FrameIndex].posZ);
 
 	//monito1 PARTES
 	KeyFrame[FrameIndex].rotRodIzq = rotRodIzq;
@@ -164,11 +169,23 @@ void saveFrame(void)
 	KeyFrame[FrameIndex].giromonito1 = giromonito1;
 	KeyFrame[FrameIndex].rotaCuello = rotaCuello;
 
+	printf("\n monito partes: %d\n", FrameIndex);
+	printf("\n\t Posicion rotRodIzq: %g", KeyFrame[FrameIndex].rotRodIzq);
+	printf("\n\t Posicion rotRodDer: %g", KeyFrame[FrameIndex].rotRodDer);
+	printf("\n\t Posicion rotManIzq: %g", KeyFrame[FrameIndex].rotManIzq);
+	printf("\n\t Posicion rotManIzq: %g", KeyFrame[FrameIndex].rotManDer);
+	printf("\n\t Posicion rotManIzq: %g", KeyFrame[FrameIndex].giromonito1);
+	printf("\n\t Posicion rotManIzq: %g", KeyFrame[FrameIndex].rotaCuello);
+
 	//BALON
 	KeyFrame[FrameIndex].posXBal = posXBal;
 	KeyFrame[FrameIndex].posYBal = posYBal;
 	KeyFrame[FrameIndex].posZBal = posZBal;
 
+	printf("\n balon: %d\n", FrameIndex);
+	printf("\n\t Posicion posxbal: %g", KeyFrame[FrameIndex].posXBal);
+	printf("\n\t Posicion posybal: %g", KeyFrame[FrameIndex].posYBal);
+	printf("\n\t Posicion poszbal: %g", KeyFrame[FrameIndex].posZBal);
 
 	FrameIndex++;
 }
@@ -1683,9 +1700,9 @@ void InitGL ( GLvoid )     // Inicializamos parametros
 	balonText.BuildGLTexture();
 	balonText.ReleaseImage();
 
-	text1.LoadBMP("city/01.bmp");
-	text1.BuildGLTexture();
-	text1.ReleaseImage();
+	//text1.LoadBMP("city/01.bmp");
+	//text1.BuildGLTexture();
+	//text1.ReleaseImage();
 
 	text2.LoadTGA("city/acero.tga");
 	text2.BuildGLTexture();
@@ -1781,7 +1798,7 @@ void InitGL ( GLvoid )     // Inicializamos parametros
 	ciudad_display_list = createDL();
 
 	//NEW Iniciar variables de KeyFrames
-	for(int i=0; i<MAX_FRAMES; i++)
+	/*for(int i=0; i<MAX_FRAMES; i++)
 	{
 		KeyFrame[i].posX = 0;
 		KeyFrame[i].posY = 0;
@@ -1809,7 +1826,98 @@ void InitGL ( GLvoid )     // Inicializamos parametros
 
 		
 		
-	}
+	}*/
+	//frames guardados
+	//monito1 COMPLETO
+	KeyFrame[0].posX = 0;
+	KeyFrame[0].posY = 2.5;
+	KeyFrame[0].posZ = -3.5;
+	KeyFrame[0].rotRodIzq = 0;
+	KeyFrame[0].rotRodDer = 0;
+	KeyFrame[0].rotManIzq = 0;
+	KeyFrame[0].rotManDer = 0;
+	KeyFrame[0].giromonito1 = 0;
+	KeyFrame[0].rotaCuello = 0;
+	//BALON
+	KeyFrame[0].posXBal = 0;
+	KeyFrame[0].posYBal = 0.48;
+	KeyFrame[0].posZBal = 0;
+
+	KeyFrame[1].posX = 0;
+	KeyFrame[1].posY = 2.5;
+	KeyFrame[1].posZ = -1.5;
+	KeyFrame[1].rotRodIzq = 0;
+	KeyFrame[1].rotRodDer = 0;
+	KeyFrame[1].rotManIzq = 0;
+	KeyFrame[1].rotManDer = 0;
+	KeyFrame[1].giromonito1 = 0;
+	KeyFrame[1].rotaCuello = 0;
+	//BALON
+	KeyFrame[1].posXBal = 0;
+	KeyFrame[1].posYBal = 0.48;
+	KeyFrame[1].posZBal = 0;
+
+
+
+	KeyFrame[2].posX = 0;
+	KeyFrame[2].posY = 2.5;
+	KeyFrame[2].posZ = -1.5;
+	KeyFrame[2].rotRodIzq = 24;
+	KeyFrame[2].rotRodDer = 0;
+	KeyFrame[2].rotManIzq = -4;
+	KeyFrame[2].rotManDer = 0;
+	KeyFrame[2].giromonito1 = 0;
+	KeyFrame[2].rotaCuello = 0;
+	//BALON
+	KeyFrame[2].posXBal = 0;
+	KeyFrame[2].posYBal = 0.48;
+	KeyFrame[2].posZBal = 0;
+
+
+	KeyFrame[3].posX = 0;
+	KeyFrame[3].posY = 2.5;
+	KeyFrame[3].posZ = -1.5;
+	KeyFrame[3].rotRodIzq = -46;
+	KeyFrame[3].rotRodDer = 0;
+	KeyFrame[3].rotManIzq = -4;
+	KeyFrame[3].rotManDer = 0;
+	KeyFrame[3].giromonito1 = 0;
+	KeyFrame[3].rotaCuello = 0;
+	//BALON
+	KeyFrame[3].posXBal = 0;
+	KeyFrame[3].posYBal = 0.48;
+	KeyFrame[3].posZBal = 0;
+
+	KeyFrame[4].posX = 0;
+	KeyFrame[4].posY = 2.5;
+	KeyFrame[4].posZ = -1.5;
+	KeyFrame[4].rotRodIzq = -46;
+	KeyFrame[4].rotRodDer = 0;
+	KeyFrame[4].rotManIzq = -4;
+	KeyFrame[4].rotManDer = 0;
+	KeyFrame[4].giromonito1 = 0;
+	KeyFrame[4].rotaCuello = 0;
+	//BALON
+	KeyFrame[4].posXBal = 0;
+	KeyFrame[4].posYBal = 0.48;
+	KeyFrame[4].posZBal = 1;
+
+
+	KeyFrame[5].posX = 0;
+	KeyFrame[5].posY = 2.5;
+	KeyFrame[5].posZ = -1.5;
+	KeyFrame[5].rotRodIzq = -46;
+	KeyFrame[5].rotRodDer = 0;
+	KeyFrame[5].rotManIzq = -4;
+	KeyFrame[5].rotManDer = 0;
+	KeyFrame[5].giromonito1 = 0;
+	KeyFrame[5].rotaCuello = 0;
+	//BALON
+	KeyFrame[5].posXBal = 0;
+	KeyFrame[5].posYBal = 0.48;
+	KeyFrame[5].posZBal = 4;
+	
+
 	//NEW//////////////////NEW//////////////////NEW///////////
 
 }
